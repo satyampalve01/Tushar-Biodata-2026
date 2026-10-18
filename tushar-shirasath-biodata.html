@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#57132B">
+<title>तुषार संतोष शिरसाठ | विवाह बायोडाटा</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Marathi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF3E6;
+    --ivory-2:#F5E7D0;
+    --paper:#FFFDF8;
+    --maroon:#7C1E33;
+    --maroon-dark:#5C1526;
+    --maroon-deep:#440D1B;
+    --gold:#B8862E;
+    --gold-light:#E3C57C;
+    --gold-pale:#F1DFAE;
+    --olive:#57633A;
+    --olive-dark:#3C4527;
+    --ink:#3A2716;
+    --ink-soft:#6B5643;
+    --line:#E4D3B2;
+    --shadow: 0 18px 40px -18px rgba(75,15,30,0.35);
+    --shadow-lg: 0 26px 60px -22px rgba(68,13,27,0.42);
+    --safe-l: max(18px, env(safe-area-inset-left));
+    --safe-r: max(18px, env(safe-area-inset-right));
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 12% 6%, rgba(184,134,46,0.12), transparent 38%),
+      radial-gradient(circle at 90% 14%, rgba(124,30,51,0.09), transparent 42%),
+      radial-gradient(circle at 50% 95%, rgba(87,99,58,0.07), transparent 45%),
+      var(--ivory);
+    color:var(--ink);
+    font-family:'Noto Sans Devanagari', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  h1,h2,h3{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  img{display:block; max-width:100%;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal.d1.in{transition-delay:.08s;}
+
+  /* ============ sticky compact nav ============ */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    display:flex; align-items:center; justify-content:center;
+    padding:10px var(--safe-r) 10px var(--safe-l);
+    background:rgba(251,243,230,.88);
+    backdrop-filter:blur(10px) saturate(1.2);
+    -webkit-backdrop-filter:blur(10px) saturate(1.2);
+    border-bottom:1px solid rgba(184,134,46,.25);
+    transform:translateY(-110%);
+    transition:transform .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .topbar.show{transform:translateY(0);}
+  .topbar-inner{
+    display:flex; align-items:center; gap:6px;
+    max-width:640px; width:100%;
+    overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .topbar-inner::-webkit-scrollbar{display:none;}
+  .topbar-crest{
+    flex:0 0 auto; width:28px; height:28px; border-radius:50%;
+    background:linear-gradient(150deg,var(--maroon),var(--maroon-deep));
+    color:var(--gold-pale); display:flex; align-items:center; justify-content:center;
+    font-family:'Yatra One',cursive; font-size:.9rem; margin-right:6px;
+    border:1.5px solid var(--gold-light);
+  }
+  .topbar a{
+    flex:0 0 auto;
+    padding:7px 13px; border-radius:999px; font-size:.8rem;
+    color:var(--maroon-deep); white-space:nowrap;
+    border:1px solid transparent;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .topbar a.active{background:var(--maroon); color:var(--gold-pale); border-color:var(--maroon);}
+
+  .bandarwal{
+    display:flex; justify-content:center; align-items:flex-start;
+    height:40px; width:100%; overflow:hidden;
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+  .leaf-row{display:flex; gap:11px; align-items:flex-start; padding:0 12px;}
+  .leaf{
+    width:17px; height:22px; flex:0 0 auto;
+    background:linear-gradient(160deg, var(--olive), var(--olive-dark));
+    clip-path: polygon(50% 0%, 100% 55%, 50% 100%, 0% 55%);
+    position:relative;
+    animation:sway 3.2s ease-in-out infinite;
+  }
+  .leaf::after{
+    content:"";
+    position:absolute; left:50%; top:68%; width:5px; height:5px; border-radius:50%;
+    background:var(--gold); transform:translate(-50%,0);
+  }
+  .leaf:nth-child(3n){animation-delay:.4s;}
+  .leaf:nth-child(3n+1){animation-delay:.9s;}
+  @keyframes sway{ 0%,100%{transform:rotate(-3deg);} 50%{transform:rotate(3deg);} }
+
+  .hero{ position:relative; padding:4px 18px 24px; padding-left:var(--safe-l); padding-right:var(--safe-r); text-align:center; overflow:hidden; }
+  .hero-motif{ position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:520px; height:520px; opacity:.06; z-index:0; pointer-events:none; }
+  .shlok{ position:relative; z-index:1; font-family:'Tiro Devanagari Marathi', serif; color:var(--maroon); letter-spacing:.5px; font-size:1rem; margin:8px 0 18px; opacity:.92; }
+
+  .portrait-wrap{ position:relative; z-index:1; width:min(220px, 54vw); margin:0 auto; }
+  .portrait-glow{ position:absolute; inset:-18%; border-radius:50%; z-index:0; background:radial-gradient(circle, rgba(184,134,46,.28), transparent 68%); filter:blur(6px); }
+  .arch-svg{ position:absolute; inset:-24px -30px auto -30px; width:calc(100% + 60px); height:auto; z-index:0; pointer-events:none; }
+  .portrait-btn{
+    position:relative; z-index:2; width:100%; aspect-ratio:1/1; border-radius:50%;
+    border:5px solid var(--paper); outline:3px solid var(--gold); outline-offset:4px;
+    background:var(--paper); box-shadow:var(--shadow-lg); padding:0; overflow:hidden;
+    transition:transform .35s ease, outline-color .35s ease;
+  }
+  .portrait-btn:hover{transform:scale(1.035); outline-color:var(--maroon);}
+  .portrait-btn:focus-visible{outline-color:var(--olive);}
+  .portrait-btn img{width:100%; height:100%; object-fit:cover;}
+  .crest-star{
+    position:absolute; top:-14px; left:50%; transform:translateX(-50%); width:32px; height:32px; z-index:3;
+    display:flex; align-items:center; justify-content:center; background:var(--gold); color:var(--paper);
+    border-radius:50%; border:3px solid var(--paper); box-shadow:0 4px 10px rgba(0,0,0,.2); font-size:1rem;
+  }
+  .story-row{ position:relative; z-index:1; display:flex; gap:14px; justify-content:center; margin-top:18px; }
+  .story-thumb{ width:54px; height:54px; border-radius:50%; padding:3px; flex:0 0 auto;
+    background:conic-gradient(from 180deg, var(--gold), var(--maroon), var(--olive), var(--gold)); border:none; min-width:44px; min-height:44px; }
+  .story-thumb .ring{ display:flex; align-items:center; justify-content:center; width:100%; height:100%; border-radius:50%; background:var(--paper); overflow:hidden; border:2px solid var(--paper); }
+  .story-thumb img{width:100%; height:100%; object-fit:cover; border-radius:50%;}
+  .story-thumb.add .ring{ color:var(--gold); font-size:1.2rem; border:1.6px dashed var(--gold); background:var(--ivory-2); }
+  .story-thumb{transition:transform .25s ease;}
+  .story-thumb:hover, .story-thumb:focus-visible{transform:translateY(-4px);}
+  .story-label{ position:relative; z-index:1; font-size:.75rem; color:var(--ink-soft); margin-top:9px; letter-spacing:.3px; }
+
+  .name{ position:relative; z-index:1; font-family:'Yatra One', cursive; color:var(--maroon-deep); font-size:clamp(1.7rem, 7vw, 2.8rem); margin-top:22px; line-height:1.25; text-shadow:0 1px 0 rgba(255,255,255,.4); }
+  .name-rule{ width:60px; height:2px; margin:11px auto 0; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .subtitle{ position:relative; z-index:1; color:var(--olive-dark); font-size:.9rem; margin-top:11px; letter-spacing:.3px; }
+  .subtitle .dot{color:var(--gold); padding:0 7px;}
+
+  .pill-nav{ position:relative; z-index:1; margin:24px auto 0; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; max-width:520px; }
+  .pill-nav a{ padding:9px 15px; border:1.4px solid var(--gold); border-radius:999px; font-size:.82rem; color:var(--maroon-deep); background:var(--paper); transition:background .25s ease, color .25s ease, transform .2s ease; }
+  .pill-nav a:hover{background:var(--maroon); color:var(--gold-pale); transform:translateY(-2px);}
+  .pill-nav a.active{background:var(--maroon); color:var(--gold-pale); border-color:var(--maroon);}
+
+  .wave{ display:block; width:100%; height:32px; margin-top:-1px; }
+  .wave path{ fill:var(--paper); }
+  .alt-bg{ background:var(--ivory-2); }
+
+  .mini-arch{ width:68px; height:26px; margin:13px auto 0; display:block; opacity:.85; }
+  .section-eyebrow{ display:block; text-align:center; font-family:'Cormorant Garamond', serif; font-style:italic; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-size:.76rem; }
+  .section-title{ text-align:center; font-family:'Tiro Devanagari Marathi', serif; color:var(--maroon-deep); font-size:clamp(1.35rem, 5.2vw, 2rem); margin-top:4px; }
+
+  section{ padding:52px 18px 8px; max-width:980px; margin:0 auto; padding-left:var(--safe-l); padding-right:var(--safe-r); position:relative; z-index:1;}
+  .section-wrap{ padding-bottom:40px; position:relative; }
+
+  .kundali-wrap{ margin-top:32px; background:var(--paper); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); padding:22px 10px 10px; position:relative; }
+  .kundali-wrap .motif{ position:absolute; top:12px; color:var(--gold); font-size:1rem; }
+  .kundali-wrap .motif.l{left:16px;} .kundali-wrap .motif.r{right:16px;}
+  .stat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:2px; border-radius:14px; overflow:hidden; }
+  .stat-card{ background:var(--paper); padding:15px 15px; border-bottom:1px dashed var(--line); border-right:1px dashed var(--line); display:flex; flex-direction:column; gap:4px; }
+  .stat-card .k{ font-size:.7rem; letter-spacing:.4px; color:var(--olive-dark); font-family:'Cormorant Garamond', serif; font-style:italic; text-transform:uppercase; }
+  .stat-card .v{ font-size:.98rem; color:var(--ink); font-weight:600; word-break:break-word; }
+
+  .tree{ margin-top:36px; display:flex; flex-direction:column; align-items:center; gap:0; }
+  .tree-row{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; width:100%; max-width:540px; position:relative; }
+  .tree-row.extended{ grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); max-width:680px;}
+  .tree-link{ width:100%; display:flex; justify-content:center; margin:2px 0; }
+  .tree-link svg{ width:2px; height:20px; }
+  .fam-card{ background:var(--paper); border:1px solid var(--line); border-top:3px solid var(--maroon); border-radius:14px; padding:13px 13px; box-shadow:0 10px 24px -14px rgba(75,15,30,.28); text-align:center; min-width:0; }
+  .fam-card.sibling{border-top-color:var(--olive);}
+  .fam-card.extended{border-top-color:var(--gold);}
+  .fam-card .rel{ font-size:.68rem; text-transform:uppercase; letter-spacing:.6px; color:var(--gold); font-family:'Cormorant Garamond', serif; font-style:italic; }
+  .fam-card .fname{ font-family:'Tiro Devanagari Marathi', serif; font-size:.95rem; color:var(--maroon-deep); margin-top:4px; }
+  .fam-card .fmeta{ font-size:.76rem; color:var(--ink-soft); margin-top:5px; line-height:1.4; }
+  .tree-group-label{ text-align:center; font-size:.76rem; color:var(--olive-dark); letter-spacing:1px; margin:24px 0 12px; text-transform:uppercase; font-family:'Cormorant Garamond', serif; font-style:italic; }
+  @media (max-width:420px){ .tree-row{ grid-template-columns:1fr; max-width:270px; } }
+
+  .medal-plaque{ margin-top:34px; background:linear-gradient(160deg, var(--olive-dark), var(--olive)); border-radius:20px; padding:36px 18px 28px; position:relative; box-shadow:var(--shadow-lg); color:var(--ivory); overflow:hidden; text-align:center; }
+  .medal-plaque::before{ content:""; position:absolute; inset:9px; border:1.5px solid rgba(227,197,124,.35); border-radius:14px; pointer-events:none; }
+  .medal-plaque::after{ content:""; position:absolute; top:-40%; left:-20%; width:60%; height:220%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.12), transparent); transform:rotate(18deg); animation:sheen 4.5s ease-in-out infinite; }
+  @keyframes sheen{ 0%{ transform:translateX(-40%) rotate(18deg); } 55%,100%{ transform:translateX(220%) rotate(18deg); } }
+  .medallion{ width:92px; height:92px; margin:0 auto 15px; position:relative; }
+  .medallion svg{width:100%; height:100%;}
+  .medal-rank{ font-family:'Yatra One', cursive; font-size:1.22rem; color:var(--gold-pale); letter-spacing:.5px; }
+  .medal-sub{ margin-top:8px; font-size:.86rem; color:var(--gold-light); letter-spacing:.4px; }
+  .ribbon{ display:inline-block; margin-top:19px; padding:8px 18px; background:var(--gold); color:var(--maroon-deep); font-family:'Tiro Devanagari Marathi', serif; font-size:.85rem; border-radius:4px; letter-spacing:.4px; box-shadow:0 8px 18px -8px rgba(0,0,0,.4); }
+  .career-grid{ margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:11px; text-align:left; }
+  .career-item{ background:rgba(255,252,246,0.08); border:1px solid rgba(227,197,124,.25); border-radius:12px; padding:12px 14px; }
+  .career-item .k{font-size:.68rem; color:var(--gold-light); text-transform:uppercase; letter-spacing:.4px; font-family:'Cormorant Garamond', serif; font-style:italic;}
+  .career-item .v{font-size:.92rem; margin-top:4px; color:var(--ivory);}
+
+  .contact-grid{ margin-top:34px; display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+  .addr-card{ background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:0 12px 26px -18px rgba(75,15,30,.3); }
+  .addr-card .tag{ display:inline-flex; align-items:center; gap:6px; font-size:.72rem; color:var(--maroon); text-transform:uppercase; letter-spacing:.5px; font-family:'Cormorant Garamond', serif; font-style:italic; }
+  .addr-card p{margin:9px 0 0; line-height:1.65; color:var(--ink); font-size:.92rem;}
+  .phone-card{ background:linear-gradient(160deg, var(--maroon), var(--maroon-deep)); color:var(--ivory); border-radius:16px; padding:17px 19px; display:flex; align-items:center; justify-content:space-between; gap:12px; box-shadow:var(--shadow); flex-wrap:wrap; }
+  .phone-card .num a{ font-size:1.05rem; font-weight:600; letter-spacing:.4px; color:var(--gold-pale); }
+  .phone-card .tag{ color:var(--gold-light); font-size:.72rem; letter-spacing:.5px; text-transform:uppercase; font-family:'Cormorant Garamond', serif; font-style:italic; display:block;}
+  .phone-actions{ display:flex; gap:8px; }
+  .phone-actions a{ width:38px; height:38px; min-width:38px; border-radius:50%; background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; color:var(--gold-pale); transition:background .2s ease, transform .2s ease; }
+  .phone-actions a:hover{ background:rgba(255,255,255,.24); transform:translateY(-2px); }
+
+  .social-block{ margin-top:30px; padding-top:24px; border-top:1px dashed var(--line); }
+  .social-title{ text-align:center; font-size:.8rem; color:var(--olive-dark); letter-spacing:1px; text-transform:uppercase; margin-bottom:15px; font-family:'Cormorant Garamond', serif; font-style:italic; }
+  .social-row{ display:flex; flex-direction:column; gap:10px; max-width:420px; margin:0 auto; }
+  .social-item{ display:flex; align-items:center; gap:13px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:11px 15px; transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease; min-height:44px; }
+  .social-item:hover, .social-item:focus-visible{ transform:translateY(-3px); box-shadow:0 14px 26px -16px rgba(75,15,30,.35); border-color:var(--gold); }
+  .social-icon{ width:38px; height:38px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--paper); }
+  .social-icon.ig{background:linear-gradient(135deg,#7C1E33,#B8862E);}
+  .social-icon.fb{background:linear-gradient(135deg,#3C4527,#57633A);}
+  .social-icon.wa{background:linear-gradient(135deg,#57633A,#7C1E33);}
+  .social-text .sname{display:block; font-family:'Tiro Devanagari Marathi', serif; font-size:.94rem; color:var(--maroon-deep);}
+  .social-text .handle{display:block; font-size:.8rem; color:var(--ink-soft); margin-top:2px;}
+
+  footer{ text-align:center; padding:44px 20px 50px; color:var(--ink-soft); padding-left:var(--safe-l); padding-right:var(--safe-r); position:relative; z-index:1; }
+  footer .bless{ font-family:'Yatra One', cursive; color:var(--maroon-deep); font-size:1.2rem; }
+  footer .om{margin-top:10px; font-size:.8rem; letter-spacing:2px;}
+
+  .story-overlay{ position:fixed; inset:0; z-index:100; background:rgba(24,10,9,.94); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s ease; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  .story-overlay.open{opacity:1; pointer-events:auto;}
+  .story-progress{ position:absolute; top:calc(16px + env(safe-area-inset-top)); left:16px; right:16px; display:flex; gap:6px; z-index:3; }
+  .story-progress .bar{ flex:1; height:3px; background:rgba(255,255,255,.28); border-radius:3px; overflow:hidden; }
+  .story-progress .bar i{ display:block; height:100%; width:0%; background:var(--gold-light); }
+  .story-progress .bar.done i{width:100%;}
+  .story-head{ position:absolute; top:calc(30px + env(safe-area-inset-top)); left:16px; right:16px; display:flex; align-items:center; gap:8px; z-index:3; color:var(--gold-pale); font-size:.8rem; }
+  .story-head .mini-mono{ width:24px; height:24px; border-radius:50%; overflow:hidden; border:1.4px solid var(--gold-light); flex:0 0 auto; }
+  .story-head .mini-mono img{width:100%; height:100%; object-fit:cover;}
+  .story-close{ position:absolute; top:calc(24px + env(safe-area-inset-top)); right:16px; z-index:4; background:none; border:none; color:var(--ivory); font-size:1.4rem; padding:8px; }
+  .story-stage{ width:min(380px, 92vw); aspect-ratio:9/14; max-height:82vh; border-radius:18px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.5); position:relative; }
+  .story-slide{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; background:linear-gradient(165deg, var(--maroon), var(--maroon-deep)); opacity:0; transition:opacity .35s ease; }
+  .story-slide.active{opacity:1;}
+  .story-slide img{ width:100%; height:100%; object-fit:cover; }
+  .story-slide .add-tile{ display:flex; flex-direction:column; align-items:center; gap:14px; color:var(--gold-light); text-align:center; padding:0 28px; }
+  .story-slide .add-tile .plus{ width:64px; height:64px; border-radius:50%; border:2px dashed var(--gold-light); display:flex; align-items:center; justify-content:center; font-size:1.8rem; }
+  .story-nav{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.12); border:none; color:var(--ivory); width:40px; height:40px; border-radius:50%; font-size:1.3rem; z-index:4; }
+  .story-nav.prev{left:8px;} .story-nav.next{right:8px;}
+  .tap-zone{ position:absolute; top:0; bottom:0; width:34%; z-index:2; background:transparent; border:none; }
+  .tap-zone.left{left:0;} .tap-zone.right{right:0;}
+  @media (min-width:600px){ .story-nav.prev{left:-56px;} .story-nav.next{right:-56px;} }
+
+  .lightbox{ position:fixed; inset:0; z-index:99; background:rgba(18,9,8,.92); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .3s ease; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  .lightbox.open{opacity:1; pointer-events:auto;}
+  .lightbox .lb-inner{ width:min(320px,80vw); max-height:78vh; aspect-ratio:1/1; border-radius:50%; border:6px solid var(--gold-light); overflow:hidden; }
+  .lightbox .lb-inner img{ width:100%; height:100%; object-fit:cover; }
+  .lightbox .lb-close{ position:absolute; top:calc(20px + env(safe-area-inset-top)); right:20px; background:none; border:none; color:var(--ivory); font-size:1.5rem; padding:8px; }
+  .lightbox .lb-caption{ position:absolute; bottom:calc(28px + env(safe-area-inset-bottom)); left:0; right:0; text-align:center; color:var(--gold-light); font-size:.84rem; font-family:'Tiro Devanagari Marathi', serif; }
+
+  @media (max-width:640px){ section{padding:40px 14px 6px;} }
+  @media (max-width:360px){ .story-row{gap:10px;} .story-thumb{width:48px; height:48px;} }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-crest">🌸</span>
+    <a href="#personal">वैयक्तिक</a>
+    <a href="#family">कौटुंबिक</a>
+    <a href="#career">नोकरी</a>
+    <a href="#contact">संपर्क</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <svg class="hero-motif" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M100 10 C130 40 160 60 100 100 C40 60 70 40 100 10Z" fill="#7C1E33"/>
+    <path d="M100 190 C70 160 40 140 100 100 C160 140 130 160 100 190Z" fill="#57633A"/>
+  </svg>
+  <div class="bandarwal" aria-hidden="true"><div class="leaf-row" id="leafRow"></div></div>
+
+  <p class="shlok">॥ श्री गणेशाय नमः ॥</p>
+
+  <div class="portrait-wrap">
+    <div class="portrait-glow" aria-hidden="true"></div>
+    <svg class="arch-svg" viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 260 C20 90, 90 20, 150 20 C210 20, 280 90, 280 260" stroke="#B8862E" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 9"/>
+      <path d="M4 300 C4 110, 84 10, 150 10 C216 10, 296 110, 296 300" stroke="#B8862E" stroke-width="1.4" opacity="0.55"/>
+      <circle cx="20" cy="260" r="4" fill="#7C1E33"/><circle cx="280" cy="260" r="4" fill="#7C1E33"/>
+      <circle cx="5" cy="300" r="3" fill="#57633A"/><circle cx="296" cy="300" r="3" fill="#57633A"/>
+    </svg>
+    <button class="portrait-btn" id="mainPhotoBtn" aria-label="मुख्य फोटो मोठ्या आकारात पाहा">
+      <img src="Main.jpeg" alt="तुषार संतोष शिरसाठ" style="width: 100%; height: 100%; object-fit:cover;
+    object-position: center top; transform: scale(2.1) translateY(35px);">
+
+    </button>
+    <div class="crest-star" aria-hidden="true">&#9733;</div>
+  </div>
+
+  <div class="story-row" role="group" aria-label="अधिक फोटो पाहा">
+    <button class="story-thumb" data-slide="0" aria-label="फोटो १ पाहा"><span class="ring"><img src="first.jpeg" alt="तुषार फोटो १"></span></button>
+    <button class="story-thumb" data-slide="1" aria-label="फोटो २ पाहा"><span class="ring"><img src="second.jpeg" alt="तुषार फोटो २"></span></button>
+    <button class="story-thumb add" data-slide="2" aria-label="अजून फोटो पाहा"><span class="ring">+</span></button>
+  </div>
+  <div class="story-label">आणखी फोटो पाहण्यासाठी टॅप करा</div>
+
+  <h1 class="name">तुषार संतोष शिरसाठ</h1>
+  <div class="name-rule" aria-hidden="true"></div>
+  <p class="subtitle">Indian Army &nbsp;(MLI)<span class="dot">•</span>मीन राशी<span class="dot">•</span>वंजारी</p>
+
+  <nav class="pill-nav" aria-label="विभाग निवडा">
+    <a href="#personal">वैयक्तिक माहिती</a>
+    <a href="#family">कौटुंबिक माहिती</a>
+    <a href="#career">नोकरी / कामगिरी</a>
+    <a href="#contact">संपर्क</a>
+  </nav>
+</header>
+
+<svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 240 0 480 40 720 20 C 960 0 1200 40 1440 20 L1440 40 L0 40 Z"></path></svg>
+
+<section id="personal">
+  <div class="section-wrap">
+    <span class="section-eyebrow reveal">Personal Details</span>
+    <h2 class="section-title reveal">वैयक्तिक माहिती</h2>
+    <svg class="mini-arch reveal" viewBox="0 0 74 30"><path d="M2 28 C2 8, 20 2, 37 2 C54 2, 72 8, 72 28" stroke="#B8862E" stroke-width="2" fill="none"/></svg>
+
+    <div class="kundali-wrap reveal d1">
+      <span class="motif l" aria-hidden="true">❈</span>
+      <span class="motif r" aria-hidden="true">❈</span>
+      <div class="stat-grid">
+        <div class="stat-card"><span class="k">पूर्ण नाव</span><span class="v">तुषार संतोष शिरसाठ</span></div>
+        <div class="stat-card"><span class="k">जन्म तारीख</span><span class="v">१४ जुलै २००१</span></div>
+        <div class="stat-card"><span class="k">धर्म</span><span class="v">हिंदू</span></div>
+        <div class="stat-card"><span class="k">जात</span><span class="v">वंजारी</span></div>
+        <div class="stat-card"><span class="k">राशी</span><span class="v">मीन</span></div>
+        <div class="stat-card"><span class="k">राशीनाव</span><span class="v">चिमाजी</span></div>
+        <div class="stat-card"><span class="k">जन्मस्थान</span><span class="v">मेहेकरी, अहिल्यानगर</span></div>
+        <div class="stat-card"><span class="k">जन्मवेळ / जन्मवार</span><span class="v">रात्री १:४५ वा. — शनिवार</span></div>
+        <div class="stat-card"><span class="k">उंची</span><span class="v">१७३ सेमी</span></div>
+        <div class="stat-card"><span class="k">रक्तगट</span><span class="v">O+</span></div>
+        <div class="stat-card"><span class="k">शिक्षण</span><span class="v">BSc</span></div>
+        <div class="stat-card"><span class="k">नोकरी</span><span class="v">Indian Army (MLI)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="alt-bg">
+<svg class="wave wave-top" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 240 40 480 0 720 20 C 960 40 1200 0 1440 20 L1440 0 L0 0 Z" fill="var(--ivory-2)"></path></svg>
+<section id="family">
+  <div class="section-wrap">
+    <span class="section-eyebrow reveal">Family Details</span>
+    <h2 class="section-title reveal">कौटुंबिक माहिती</h2>
+    <svg class="mini-arch reveal" viewBox="0 0 74 30"><path d="M2 28 C2 8, 20 2, 37 2 C54 2, 72 8, 72 28" stroke="#B8862E" stroke-width="2" fill="none"/></svg>
+
+    <div class="tree reveal d1">
+      <div class="tree-row">
+        <div class="fam-card"><span class="rel">वडील</span><div class="fname">संतोष भिकाजी शिरसाठ</div><div class="fmeta">व्यवसाय — वाहन चालक</div></div>
+        <div class="fam-card"><span class="rel">आई</span><div class="fname">कमल संतोष शिरसाठ</div><div class="fmeta">व्यवसाय — गृहिणी</div></div>
+      </div>
+      <div class="tree-link" aria-hidden="true"><svg><line x1="1" y1="0" x2="1" y2="22" stroke="#B8862E" stroke-width="2"/></svg></div>
+      <div class="tree-row">
+        <div class="fam-card sibling"><span class="rel">भाऊ (विवाहित)</span><div class="fname">निलेश संतोष शिरसाठ</div><div class="fmeta">Indian Army</div></div>
+        <div class="fam-card sibling"><span class="rel">बहीण (विवाहित)</span><div class="fname">वैष्णवी विष्णू डमाळे</div></div>
+      </div>
+      <div class="tree-group-label">विस्तारित कुटुंब</div>
+      <div class="tree-row extended">
+        <div class="fam-card extended"><span class="rel">मामा</span><div class="fname">संभाजी रामभाऊ पालवे</div><div class="fmeta">मु.पो. मेहेकरी, ता. नगर, जि. अहिल्यानगर</div></div>
+        <div class="fam-card extended"><span class="rel">आत्या</span><div class="fname">रंजना पोपट गिते</div><div class="fmeta">मु.पो. कडगाव, ता. पाथर्डी, जि. अहिल्यानगर</div></div>
+        <div class="fam-card extended"><span class="rel">आत्या</span><div class="fname">बेबी दत्तू पालवे</div><div class="fmeta">मु.पो. उदरमल, ता. पाथर्डी, जि. अहिल्यानगर</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);"><path d="M0 20 C 240 40 480 0 720 20 C 960 40 1200 0 1440 20 L1440 0 L0 0 Z" fill="var(--ivory-2)"></path></svg>
+
+<section id="career">
+  <div class="section-wrap">
+    <span class="section-eyebrow reveal">Service &amp; Achievements</span>
+    <h2 class="section-title reveal">नोकरी / कामगिरी</h2>
+    <svg class="mini-arch reveal" viewBox="0 0 74 30"><path d="M2 28 C2 8, 20 2, 37 2 C54 2, 72 8, 72 28" stroke="#B8862E" stroke-width="2" fill="none"/></svg>
+
+    <div class="medal-plaque reveal d1">
+      <div class="medallion">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#E3C57C" stroke-width="2"/>
+          <circle cx="50" cy="50" r="24" fill="none" stroke="#E3C57C" stroke-width="1"/>
+          <path d="M50 30 L54 43 L68 43 L57 51 L61 65 L50 56 L39 65 L43 51 L32 43 L46 43 Z" fill="#E3C57C"/>
+          <path d="M22 50 C14 62, 14 78, 24 88" stroke="#E3C57C" stroke-width="2" fill="none"/>
+          <path d="M78 50 C86 62, 86 78, 76 88" stroke="#E3C57C" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="medal-rank">भारतीय सैन्यात राष्ट्रसेवेत तत्पर</div>
+      <div class="medal-sub">कर्तव्य • शौर्य • राष्ट्रभक्ती</div>
+      <div class="career-grid">
+        <div class="career-item"><span class="k">सेवा</span><span class="v"> Indian Army</span></div>
+        <div class="career-item"><span class="k">तुकडी</span><span class="v"> MLI</span></div>
+        <div class="career-item"><span class="k">शिक्षण</span><span class="v"> BSc</span></div>
+      </div>
+      <div class="ribbon">देशसेवा हीच खरी ओळख</div>
+    </div>
+  </div>
+</section>
+
+<div class="alt-bg">
+<svg class="wave wave-top" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 240 40 480 0 720 20 C 960 40 1200 0 1440 20 L1440 0 L0 0 Z" fill="var(--ivory-2)"></path></svg>
+<section id="contact">
+  <div class="section-wrap">
+    <span class="section-eyebrow reveal">Get in Touch</span>
+    <h2 class="section-title reveal">संपर्क</h2>
+    <svg class="mini-arch reveal" viewBox="0 0 74 30"><path d="M2 28 C2 8, 20 2, 37 2 C54 2, 72 8, 72 28" stroke="#B8862E" stroke-width="2" fill="none"/></svg>
+
+    <div class="reveal d1" style="margin-top:32px;">
+      <div class="phone-card">
+        <div class="num"><span class="tag">मोबाईल क्रमांक</span><a href="tel:+917021788941">७०२१७८८९४१</a></div>
+        <div class="phone-actions">
+          <a href="tel:+917021788941" aria-label="कॉल करा"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/918548923572" target="_blank" rel="noopener" aria-label="व्हॉट्सअॅप करा"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.8c.2-.6.5-.6.8-.6h.5c.2 0 .4 0 .5.4.2.5.6 1.5.7 1.6.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.4 1.2 2 1.3 2.3 1.2.3-.1.6-.5.8-.8.2-.2.4-.3.6-.2.2.1 1.5.7 1.7.8.2.1.4.2.4.4 0 .2 0 1-.4 1.4-.4.4-1.3.9-2.4.6-1.6-.4-3.4-1.5-4.7-2.9-1.2-1.3-1.9-2.6-2.1-3.4-.2-.7-.1-1.3.2-1.7Z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="contact-grid" style="margin-top:14px;">
+        <div class="addr-card"><span class="tag">कायमचा पत्ता</span><p>मु.पो. कडगाव, ता. पाथर्डी,<br>जि. अहिल्यानगर — ४१४५०१</p></div>
+        <div class="addr-card"><span class="tag">सध्याचा पत्ता</span><p>ह.मु. भिंगार, ता. जि. अहिल्यानगर — ४१४००२</p></div>
+      </div>
+
+      <div class="social-block">
+        <div class="social-title">वैयक्तिक संदेशासाठी</div>
+        <div class="social-row">
+          <!-- <a class="social-item" href="https://instagram.com/perfect_soilder4656" target="_blank" rel="noopener">
+            <span class="social-icon ig" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></span>
+            <span class="social-text"><span class="sname">Instagram</span><span class="handle">@perfect_soilder4656</span></span>
+          </a> -->
+          <!-- <a class="social-item" href="https://facebook.com" target="_blank" rel="noopener">
+            <span class="social-icon fb" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M14 8.5h2.2V5.3h-2.2c-2.2 0-3.6 1.5-3.6 3.7v1.7H8v3.2h2.4V21h3.2v-7.1h2.4l.5-3.2h-2.9V9c0-.6.4-.5.4-.5Z" fill="currentColor"/></svg></span>
+            <span class="social-text"><span class="sname">Facebook</span><span class="handle">प्रोफाइल पाहा</span></span>
+          </a> -->
+          <a class="social-item" href="https://wa.me/919022953158" target="_blank" rel="noopener">
+            <span class="social-icon wa" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.8c.2-.6.5-.6.8-.6h.5c.2 0 .4 0 .5.4.2.5.6 1.5.7 1.6.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.4 1.2 2 1.3 2.3 1.2.3-.1.6-.5.8-.8.2-.2.4-.3.6-.2.2.1 1.5.7 1.7.8.2.1.4.2.4.4 0 .2 0 1-.4 1.4-.4.4-1.3.9-2.4.6-1.6-.4-3.4-1.5-4.7-2.9-1.2-1.3-1.9-2.6-2.1-3.4-.2-.7-.1-1.3.2-1.7Z" fill="currentColor"/></svg></span>
+            <span class="social-text"><span class="sname">WhatsApp</span><span class="handle">+91 90229 53158</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="bless">शुभमंगल सावधान !</div>
+  <div class="om">॥ शुभेच्छा ॥ 🙏</div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="बंद करा">✕</button>
+  <div class="lb-inner"><img src="Main.jpeg" alt="तुषार फोटो १"></div>
+  <div class="lb-caption">तुषार संतोष शिरसाठ</div>
+</div>
+
+<div class="story-overlay" id="storyOverlay" aria-hidden="true">
+  <div class="story-progress" id="storyProgress"><div class="bar"><i></i></div><div class="bar"><i></i></div><div class="bar"><i></i></div></div>
+  <div class="story-head"><span class="mini-mono"><img src="Main.jpeg" alt="तुषार फोटो १"></span><span>तुषार संतोष शिरसाठ</span></div>
+  <button class="story-close" id="storyClose" aria-label="बंद करा">✕</button>
+  <button class="story-nav prev" id="storyPrev" aria-label="मागील फोटो">‹</button>
+  <div class="story-stage" id="storyStage">
+    <button class="tap-zone left" id="tapLeft" aria-label="मागील"></button>
+    <button class="tap-zone right" id="tapRight" aria-label="पुढील"></button>
+    <div class="story-slide active" data-i="0"><img src="first.jpeg" alt="तुषार फोटो १"></div>
+    <div class="story-slide" data-i="1"><img src="second.jpeg" alt="तुषार फोटो 2"></div>
+    <div class="story-slide" data-i="2"><div class="add-tile"><span class="plus">+</span><span>अजून फोटो लवकरच जोडले जातील</span></div></div>
+  </div>
+  <button class="story-nav next" id="storyNext" aria-label="पुढील फोटो">›</button>
+</div>
+
+<script>
+  const leafRow = document.getElementById('leafRow');
+  function buildLeaves(){
+    leafRow.innerHTML = '';
+    const count = Math.max(6, Math.min(20, Math.floor(window.innerWidth / 30)));
+    for(let i=0;i<count;i++){ const l = document.createElement('div'); l.className='leaf'; leafRow.appendChild(l); }
+  }
+  buildLeaves();
+  let resizeTimer;
+  window.addEventListener('resize', ()=>{ clearTimeout(resizeTimer); resizeTimer=setTimeout(buildLeaves,200); });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} }); }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const navLinks = document.querySelectorAll('.pill-nav a, .topbar a');
+  const sections = document.querySelectorAll('section[id]');
+  const navObserver = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ navLinks.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+en.target.id)); } }); }, {threshold:0.4});
+  sections.forEach(s=>navObserver.observe(s));
+
+  const topbar = document.getElementById('topbar');
+  const heroEl = document.getElementById('top');
+  const topbarObserver = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ topbar.classList.toggle('show', !en.isIntersecting); }); }, {threshold:0, rootMargin:'-10px 0px 0px 0px'});
+  topbarObserver.observe(heroEl);
+
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('mainPhotoBtn').addEventListener('click', ()=>{ lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); });
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+  function closeLightbox(){ lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); }
+
+  const overlay = document.getElementById('storyOverlay');
+  const slides = document.querySelectorAll('.story-slide');
+  const bars = document.querySelectorAll('.story-progress .bar');
+  const stage = document.getElementById('storyStage');
+  let current = 0; let timer = null; const DURATION = 4000;
+
+  function openStory(index){ current=index; overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false'); showSlide(current); }
+  function closeStory(){ overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); clearTimeout(timer);
+    bars.forEach(b=>{ b.classList.remove('done'); b.querySelector('i').style.transition='none'; b.querySelector('i').style.width='0%'; }); }
+  function showSlide(i){
+    slides.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+    bars.forEach((b,idx)=>{ const bar=b.querySelector('i'); bar.style.transition='none'; bar.style.width = idx<i?'100%':'0%'; b.classList.toggle('done', idx<i); });
+    void bars[i].offsetWidth;
+    const activeBar = bars[i].querySelector('i');
+    activeBar.style.transition = `width ${DURATION}ms linear`;
+    requestAnimationFrame(()=>{ activeBar.style.width='100%'; });
+    clearTimeout(timer);
+    timer = setTimeout(()=>{ if(current<slides.length-1){ current++; showSlide(current);} else { closeStory(); } }, DURATION);
+  }
+  function nextSlide(){ if(current<slides.length-1){ current++; showSlide(current);} else { closeStory(); } }
+  function prevSlide(){ if(current>0){ current--; showSlide(current); } }
+
+  document.getElementById('mainPhotoBtn').addEventListener('dblclick', ()=>openStory(0));
+  document.querySelectorAll('.story-thumb').forEach(btn=>{ btn.addEventListener('click', ()=> openStory(parseInt(btn.dataset.slide))); });
+  document.getElementById('storyClose').addEventListener('click', closeStory);
+  document.getElementById('storyNext').addEventListener('click', nextSlide);
+  document.getElementById('storyPrev').addEventListener('click', prevSlide);
+  document.getElementById('tapLeft').addEventListener('click', prevSlide);
+  document.getElementById('tapRight').addEventListener('click', nextSlide);
+
+  let touchStartX = 0;
+  stage.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+  stage.addEventListener('touchend', (e)=>{ const dx = e.changedTouches[0].screenX - touchStartX; if(Math.abs(dx)>40){ dx<0 ? nextSlide() : prevSlide(); } }, {passive:true});
+
+  document.addEventListener('keydown', (e)=>{
+    if(overlay.classList.contains('open')){ if(e.key==='Escape') closeStory(); if(e.key==='ArrowRight') nextSlide(); if(e.key==='ArrowLeft') prevSlide(); }
+    if(lightbox.classList.contains('open') && e.key==='Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
